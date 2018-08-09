@@ -92,4 +92,4 @@ if __name__ == '__main__':
     app['args'] = args
     app.add_routes([web.get('/', handle_request)])
 
-    web.run_app(app)
+    web.run_app(app, host=args.host, port=args.port, print=None)
