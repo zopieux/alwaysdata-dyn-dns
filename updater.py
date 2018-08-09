@@ -17,7 +17,7 @@ async def handle_request(request):
     args = request.app['args']
 
     if args.password and args.password != request.query.get('password'):
-        logger.warning("invalid password")
+        logger.debug("invalid password")
         return web.Response(status=403, text="invalid password")
 
     qs = {'A': ('ip', ipaddress.IPv4Address),
@@ -47,7 +47,7 @@ async def handle_request(request):
         # delete them
         for record in existing_records:
             href = record['href']
-            logger.info("deleting record type: %s, name: %s",
+            logger.debug("deleting record type: %s, name: %s",
                 record['type'], record['name'])
             async with s.delete(API_BASE + href, auth=auth) as r:
                 if not (200 <= r.status < 300):
@@ -73,7 +73,7 @@ async def handle_request(request):
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
 
     p = argparse.ArgumentParser()
     p.add_argument('--host', default='0.0.0.0')
