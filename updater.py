@@ -69,7 +69,7 @@ async def handle_request(request):
                     logger.error("could not add record %s (%s)",
                         record, r.status)
 
-    return web.Response(status=200)
+    return web.Response(status=204)
 
 
 if __name__ == '__main__':
