@@ -1,4 +1,4 @@
-#!/usr/bin/eval PYTHON_VERSION=3.7 python
+#!/usr/bin/eval PYTHON_VERSION=3.8 python
 
 import argparse
 import aiohttp
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
 
     p = argparse.ArgumentParser()
-    p.add_argument('--host', default='0.0.0.0')
+    p.add_argument('--host', default='::')  # IPv6 is required.
     p.add_argument('--port', type=int, default=os.environ.get('PORT', 8888))
     p.add_argument('--ttl', type=int, default=300)
     p.add_argument(
