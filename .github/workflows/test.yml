@@ -22,8 +22,4 @@ jobs:
           python -m pip install -r requirements-test.txt
 
       - name: Test
-        run: >
-          pytest
-            --cov alwaysdata_dyn_dns
-            --cov-report term-missing
-            test.py
+        run: pytest --cov alwaysdata_dyn_dns --cov-report term-missing test.py
