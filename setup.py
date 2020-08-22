@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="alwaysdata-dyn-dns",
     author="Alexandre Macabies",
-    version="1.0.0rc2",
+    version="1.0.0",
     description="Lightweight HTTP server to update Alwaysdata DNS entries, "
     "typically from a dynamic DNS client such as a home router.",
     license="MIT",
