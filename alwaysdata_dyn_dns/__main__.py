@@ -18,7 +18,7 @@ if __name__ == "__main__":
         default=300,
         help="TTL (seconds) to use for missing entries",
     )
-    p.add_argument("--add", help="create missing entries")
+    p.add_argument("--add", action="store_true", help="create missing entries")
     p.add_argument(
         "--domain",
         type=int,
